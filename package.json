@@ -1,0 +1,24 @@
+{
+  "name": "blogging-fe-be",
+  "version": "1.0.0",
+  "description": "Blog website",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mkgabri18/Blogging-Fe-Be.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mkgabri18/Blogging-Fe-Be/issues"
+  },
+  "homepage": "https://github.com/Mkgabri18/Blogging-Fe-Be#readme",
+  "dependencies": {
+    "express-fileupload": "^1.4.0",
+    "express.js": "^1.0.0",
+    "nodemon": "^2.0.16"
+  }
+}

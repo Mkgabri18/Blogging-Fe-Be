@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor Maker</title>
+    <link rel="icon" type="image/png" href="https://www.google.com/s2/favicons?domain=reddit.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/editor.css">
+  </head>
+  <body>
+    
+    <div class="banner">
+      <input type="file" accept="image/*" id="banner-upload" hidden>
+      <label for="banner-upload" class="banner-upload-btn">
+        <img src="img/upload.png" alt="upload banner">
+      </label>
+    </div>
+
+    <div class="blog">
+      <textarea type="text" class="title" placeholder="Blog title..."></textarea>
+      <textarea type="text" class="article" placeholder="Start writing..."></textarea>
+    </div>
+
+    <div class="blog-options">
+      <button class="btn dark publish-btn">publish</button>
+      <input type="file" accept="image/*" id="image-upload" hidden>
+      <label for="image-upload" class="btn grey upload-btn">upload Image</label>
+    </div>
+
+    <script src="js/editor.js"></script>
+  </body>
+</html>
