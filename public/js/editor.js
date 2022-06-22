@@ -6,14 +6,14 @@ const bannerImage = document.querySelector('#banner-upload')
 const banner = document.querySelector('.banner')
 let bannerPath;
 
-const publishBtn = document.querySelector('.puclish-btn')
+const publishBtn = document.querySelector('.publish-btn')
 const uploadInput = document.querySelector('#image-upload')
 
 bannerImage.addEventListener('change', () => {
     uploadImage(bannerImage, 'banner')
 })
 
-uploadImage.addEventListener('change', () => {
+uploadInput.addEventListener('change', () => {
     uploadImage(uploadInput, 'image')
 })
 
@@ -35,6 +35,8 @@ const uploadImage = (uploadFile, uploadType) => {
                 banner.style.backgroundImage = `url("${bannerPath}")`
             }
         })
+    } else {
+        alert("Upload Image only")
     }
 }
 
@@ -44,6 +46,37 @@ const addImage = (imagepath, alt) => {
     articleField.value = articleField.value.slice(0, curPos) + textToInsert + articleField.value.slice(curPos)
 }
 
+let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dic"]
+
+publishBtn.addEventListener('click', () => {
+    if(articleField.value.length && blogTitleField.value.length){
+        // generate id
+        let letters = 'abcefghijklmnopqrstuvwxyz'
+        let blogtTitle = blogTitleField.value.split(" ").join("-")
+        let id = ''
+        for(let i=0; 1<4; i++) {
+            id += letters[Math.floor(Math.random() * letters.length)]
+        }
+
+        // setting up docName
+        let docName = `${blogTitle}-${id}`
+        let date = new Date()
+
+        // access firestore
+        db.collection("blogs").doc(docName).set({
+            title: blogTitleField.value,
+            article: articleField.value,
+            bannerImage: bannerPath,
+            publishedAt: `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`
+        })
+        .then(() => {
+            console.log('date entered')
+        })
+        .catch((err) => {
+            console.error(err)
+        })
+    }
+})
 
 
 
