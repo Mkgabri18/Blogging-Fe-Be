@@ -52,9 +52,9 @@ publishBtn.addEventListener('click', () => {
     if(articleField.value.length && blogTitleField.value.length){
         // generate id
         let letters = 'abcefghijklmnopqrstuvwxyz'
-        let blogtTitle = blogTitleField.value.split(" ").join("-")
+        let blogTitle = blogTitleField.value.split(" ").join("-")
         let id = ''
-        for(let i=0; 1<4; i++) {
+        for(let i=0; i<4; i++) {
             id += letters[Math.floor(Math.random() * letters.length)]
         }
 
@@ -70,7 +70,7 @@ publishBtn.addEventListener('click', () => {
             publishedAt: `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`
         })
         .then(() => {
-            console.log('date entered')
+            location.href = `/${docName}`
         })
         .catch((err) => {
             console.error(err)
