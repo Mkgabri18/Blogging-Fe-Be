@@ -20,8 +20,11 @@ app.get('/editor', (req,res) => {
 app.post('/upload', (req, res) => {
     let file = req.files.image
     let date = new Date()
+    // Image name
     let imagename = date.getDate() + date.getTime() + file.name
+    // Image upload path
     let path = 'public/uploads/' + imagename
+    // Create upload
     file.mv(path, (err, result) => {
         if(err) {
             throw err

@@ -9,3 +9,10 @@ Use command `npm init` to use node and create **package.json**
 npm i express.js nodemon express-fileupload
 ```
 
+## Run Project
+Install dependencies `npm install` after clone repo
+
+Run terminal in folder and type `npm start` to start project in *localhost:3000*
+
+![Image](/design/Blogging-Maker.png)
+
